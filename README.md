@@ -31,6 +31,7 @@ This version of Meteor Up is powered by [Docker](http://www.docker.com/) and it 
 - [Updating](#updating)
 - [Troubleshooting](#troubleshooting)
 - [Migrating from Meteor Up 0.x](#migrating-from-meteor-up-0x)
+- [FAQ](#faq)
 
 ### Features
 
@@ -348,3 +349,17 @@ Let's assume our appName is `meteor`
 * Remove MongoDB with: `apt-get remove mongodb`
 
 Then do `mupx setup` and then `mupx deploy`.
+
+### FAQ
+Q) I get an deploy verification error with logs like below (Similar to issue [88](https://github.com/kadirahq/meteor-up/issues/88))
+```
+Verifying Deployment: FAILED
+
+Error: 
+-----------------------------------STDERR-----------------------------------
+ run:
+npm WARN deprecated 
+npm WARN deprecated   npm -g install npm@latest
+npm WARN deprecated
+```
+A) Try increasing the value of `deployCheckWaitTime` field in `mup.json` file.
